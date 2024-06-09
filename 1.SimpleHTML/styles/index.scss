@@ -1,42 +1,81 @@
-$border-style: 1px solid black;
-$pfp-size: 40px;
+$border-color: #dee2e6;
+$header-color: #d9ffd0;
+$background-color1: #bdfab4;
+$background-color2: #a1e197;
+$pfp-size: 80px;
+$collapse: collapse;
+
+.my-container {
+  padding: 0;
+  margin: auto;
+  width: 1280px;
+  
+  .my-center {
+    text-align: center;
+  }
+}
 
 
 .users-table {
-  border: $border-style;
+  //border: $border-style;
+  width: 100%;
+  border-color: $border-color;
+  border-collapse: $collapse !important;
+  border-spacing: 2px;
 
-  tr {
-    border: $border-style;
+  thead {
+    th {
+      font-weight: bold;
+      
+      //background-color: $header-color;
+      
+      .number {
+        width: 40px;
+      }
 
-    td {
-      border: $border-style;
+      .pfp {
+        width: 40px;
+      }
 
-      .pfp > img {
-        width: $pfp-size;
-        height: $pfp-size;
+      .name {
+        width: 250px;
+      }
+
+      .email {
+        width: 200px;
+      }
+
+      .phone {
+        width: 140px;
       }
     }
   }
+  th, td {
+    text-align: left;
+    padding: 0.5rem;
+    //border: $border-style;
+    border: $border-color solid 0;
+    border-bottom-width: 1px;
+  }
 
-  th {
-    .number {
-      width: 40px;
-    }
+  tbody {
+    
+    //tr:nth-child(2n+1) {
+    //  background-color: $background-color1;
+    //}
+    //
+    //tr:nth-child(2n) {
+    //  background-color: $background-color2;
+    //}
 
     .pfp {
-      width: 40px;
-    }
+      width: $pfp-size;
+      height: $pfp-size;
 
-    .name {
-      width: 250px;
-    }
-
-    .email {
-      width: 200px;
-    }
-
-    .phone {
-      width: 140px;
+      img {
+        width: $pfp-size;
+        height: $pfp-size;
+      }
     }
   }
 }
