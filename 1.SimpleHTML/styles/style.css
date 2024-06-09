@@ -1,6 +1,6 @@
 
 
-table, th, td, tr {
+.users-table, .users-table tr, .users-table tr td {
     border: 1px solid black;
 }
 
