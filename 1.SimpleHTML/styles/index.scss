@@ -1,0 +1,42 @@
+$border-style: 1px solid black;
+$pfp-size: 40px;
+
+
+.users-table {
+  border: $border-style;
+
+  tr {
+    border: $border-style;
+
+    td {
+      border: $border-style;
+
+      .pfp > img {
+        width: $pfp-size;
+        height: $pfp-size;
+      }
+    }
+  }
+
+  th {
+    .number {
+      width: 40px;
+    }
+
+    .pfp {
+      width: 40px;
+    }
+
+    .name {
+      width: 250px;
+    }
+
+    .email {
+      width: 200px;
+    }
+
+    .phone {
+      width: 140px;
+    }
+  }
+}

@@ -1,0 +1,30 @@
+.users-table {
+  border: 1px solid black;
+}
+.users-table tr {
+  border: 1px solid black;
+}
+.users-table tr td {
+  border: 1px solid black;
+}
+.users-table tr td .pfp > img {
+  width: 40px;
+  height: 40px;
+}
+.users-table th .number {
+  width: 40px;
+}
+.users-table th .pfp {
+  width: 40px;
+}
+.users-table th .name {
+  width: 250px;
+}
+.users-table th .email {
+  width: 200px;
+}
+.users-table th .phone {
+  width: 140px;
+}
+
+/*# sourceMappingURL=index.css.map */
