@@ -45,11 +45,11 @@
             </div>
             <div class="row mb-3 d-flex align-items-center">
                 <div class="col-md-3">
-                    <img src="images/user.jpg" alt="фото" class="img-fluid">
+                    <img src="images/user.jpg" alt="фото" id="pfp-preview" class="img-fluid rounded-2">
                 </div>
                 <div class="col-md-9">
                     <label for="user-pfp" class="form-label">Оберіть фото:</label>
-                    <input type="file" class="form-control" id="user-pfp" required>
+                    <input type="file" class="form-control" id="user-pfp" accept="image/*" required>
                     <div class="invalid-feedback">
                         Виберіть фото
                     </div>
@@ -67,4 +67,5 @@
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 <script src="js/validation.js"></script>
+<script src="js/file_input.js"></script>
 </html>
