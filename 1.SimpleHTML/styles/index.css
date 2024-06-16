@@ -1,3 +1,7 @@
+body {
+  padding-top: 5rem;
+}
+
 .my-container {
   padding: 0;
   margin: auto;

@@ -1,9 +1,13 @@
-$border-color: #dee2e6;
-$header-color: #d9ffd0;
-$background-color1: #bdfab4;
-$background-color2: #a1e197;
+$tborder-color: #dee2e6;
+$theader-color: #d9ffd0;
+$tbackground-color1: #bdfab4;
+$tbackground-color2: #a1e197;
 $pfp-size: 80px;
 $collapse: collapse;
+
+body {
+  padding-top: 5rem;
+}
 
 .my-container {
   padding: 0;
@@ -19,7 +23,7 @@ $collapse: collapse;
 .users-table {
   //border: $border-style;
   width: 100%;
-  border-color: $border-color;
+  border-color: $tborder-color;
   border-collapse: $collapse !important;
   border-spacing: 2px;
 
@@ -54,7 +58,7 @@ $collapse: collapse;
     text-align: left;
     padding: 0.5rem;
     //border: $border-style;
-    border: $border-color solid 0;
+    border: $tborder-color solid 0;
     border-bottom-width: 1px;
   }
 
