@@ -102,7 +102,12 @@ const users = [
         } else {
             const numberOfUsers = Number(localStorage.numberOfUsers);
             for (let i = 0; i < numberOfUsers; i++) {
-                const user = JSON.parse(localStorage.getItem(`user${i + 1}`))
+                let user = JSON.parse(localStorage.getItem(`user${i + 1}`))
+                const file = /C:\\fakepath\\(.*)/.exec(user.pfpurl)
+                if (file !== null) {
+                    const [_, file_name] = file
+                    user.pfpurl = localStorage.getItem(file_name)
+                }
                 add_user(user)
             }
         }
