@@ -48,7 +48,7 @@
 </div>
 <main class="my-container">
     <h1 class="my-center">Список користувачів</h1>
-    <button type="button" id="btn-add" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addModal">Додати користувача</button>
+    <button type="button" id="btn-update" class="btn btn-primary">Оновити список</button>
     <table class="users-table" id="users-table">
         <thead>
             <tr>
@@ -60,107 +60,10 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Капранов Олексій Романович</td>
-                <td class="email">okapr543@gmail.com</td>
-                <td class="phone">+38 (099) 763 23 43</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Малик Володимир Іванович</td>
-                <td class="email">malvol@gmail.com</td>
-                <td class="phone">+38 (067) 237 83 94</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Гак Степан Валентинович</td>
-                <td class="email">hackstepan@gamil.com</td>
-                <td class="phone">+38 (095) 883 70 63</td>
-            </tr>
-            <tr>
-                <td>4</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Писар Віталій Павлович</td>
-                <td class="email">pysar17792@gmail.com</td>
-                <td class="phone">+38 (099) 498 23 73</td>
-            </tr>
-            <tr>
-                <td>5</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Давидюк Лілія Федорівна</td>
-                <td class="email">lilyd639@gmail.com</td>
-                <td class="phone">+38 (051) 378 29 02</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Горовий Юліан Михайлович</td>
-                <td class="email">yuliengoo@gmail.com</td>
-                <td class="phone">+38 (099) 550 72 77</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Шевченко Іван Миколайович</td>
-                <td class="email">epicgamer145@gmail.com</td>
-                <td class="phone">+38 (099) 827 19 98</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Ломило Станіслав Гордієвич</td>
-                <td class="email">stas23lo@gmail.com</td>
-                <td class="phone">+38 (067) 230 78 91</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Ярило Микола Давидович</td>
-                <td class="email">koliaril023@gmail.com</td>
-                <td class="phone">+38 (096) 852 52 67</td>
-            </tr>
-            <tr>
-                <td>10</td>
-                <td class="pfp"><img src="images/normal.png" alt=""></td>
-                <td class="name">Ройце Марі</td>
-                <td class="email">reutzemarie@gmail.com</td>
-                <td class="phone">+38 (050) 139 72 02</td>
-            </tr>
         </tbody>
     </table>
     <a>Сторінку зробив Конончук Андрій(група НПР211)</a>
 </main>
-<script>
-    const bsAddButton = document.getElementById('add-button');
-    bsAddButton.addEventListener('click',
-        () => {
-            const name = document.getElementById('user-name').value
-            const pfpurl = document.getElementById('user-pfp').value
-            const email = document.getElementById('user-email').value
-            const phone = document.getElementById('user-phone').value
-            let table = document.getElementById('users-table')
-            let old_index = table.rows[table.rows.length-1].children[0].innerHTML
-            let row = table.insertRow()
-            let cell1 = row.insertCell()
-            cell1.innerHTML = +old_index + 1
-            let cell2 = row.insertCell()
-            cell2.innerHTML = `<img src="${pfpurl}" class="pfp">`
-            cell2.classList.add('pfp')
-            let cell3 = row.insertCell()
-            cell3.innerHTML = name
-            cell3.classList.add('name')
-            let cell4 = row.insertCell()
-            cell4.innerHTML = email
-            cell4.classList.add('email')
-            let cell5 = row.insertCell()
-            cell5.innerHTML = phone
-            cell5.classList.add('phone')
-        })
-    
-</script>
+<script src="js/populate_users_table.js"></script>
 </body>
 </html>
