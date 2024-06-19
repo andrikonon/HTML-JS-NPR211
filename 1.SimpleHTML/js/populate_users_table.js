@@ -71,7 +71,8 @@ const users = [
         if (table.rows.length > 1) {
             old_index = table.rows[table.rows.length-1].children[0].innerHTML
         }
-        let row = table.insertRow()
+        let tbody = table.children[1]
+        let row = tbody.insertRow()
         let cell1 = row.insertCell()
         cell1.innerHTML = `${+old_index + 1}`
         let cell2 = row.insertCell()
@@ -89,6 +90,8 @@ const users = [
     }
     
     const update_users = () => {
+        let table = document.getElementById('users-table')
+        table.children[1].textContent = '';
         if (!localStorage.numberOfUsers) {
             localStorage.setItem('numberOfUsers', '0')
             
