@@ -41,11 +41,11 @@ body {
   border: #dee2e6 solid 0;
   border-bottom-width: 1px;
 }
-.users-table tbody .pfp {
+.users-table .pfp {
   width: 80px;
   height: 80px;
 }
-.users-table tbody .pfp img {
+.users-table .pfp img {
   width: 80px;
   height: 80px;
 }

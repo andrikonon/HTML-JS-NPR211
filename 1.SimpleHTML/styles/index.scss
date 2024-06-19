@@ -72,14 +72,14 @@ body {
     //  background-color: $background-color2;
     //}
 
-    .pfp {
+  }
+  .pfp {
+    width: $pfp-size;
+    height: $pfp-size;
+
+    img {
       width: $pfp-size;
       height: $pfp-size;
-
-      img {
-        width: $pfp-size;
-        height: $pfp-size;
-      }
     }
   }
 }
