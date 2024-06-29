@@ -47,6 +47,7 @@
                 <th>Фото</th>
                 <th>Назва</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody id="categories">
@@ -75,6 +76,7 @@
                         </td>
                         <td>${category.name}</td>
                         <td><button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteCategoryConfirmModal" data-bs-whatever-id="${category.id}" data-bs-whatever-name="${category.name}">Видалити</button></td>
+                        <td><a href="edit_category.html?id=${category.id}" class="btn btn-success" role="button">Редагувати</a></td>
                     </tr>`
                     if (category.imagePath === null) {
                         console.log("image path is null")
