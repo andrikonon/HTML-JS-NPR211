@@ -12,6 +12,24 @@
 </head>
 <body>
 <script> loadDOM("partials/header.html") </script>
+<div class="modal fade" id="deleteCategoryConfirmModal" tabindex="-1" aria-hidden="true" aria-labelledby="deleteCategoryConfirmModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="deleteCategoryConfirmModalLabel">Точно?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрити"></button>
+            </div>
+            <div class="modal-body">
+                <p id="p-sure"></p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Ні, нічого не видаляти</button>
+                <button type="button" class="btn btn-primary" id="yes-button"></button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <main class="container">
     <h1 class="center">Меню</h1>
     <div class="row">
@@ -56,7 +74,7 @@
                                 alt="${category.name}" width="100">
                         </td>
                         <td>${category.name}</td>
-                        <td></td>
+                        <td><button type="button" class="btn btn-primary btn-danger" data-bs-toggle="modal" data-bs-target="#deleteCategoryConfirmModal" data-bs-whatever-id="${category.id}" data-bs-whatever-name="${category.name}">Видалити</button></td>
                     </tr>`
                     if (category.imagePath === null) {
                         console.log("image path is null")
@@ -64,6 +82,29 @@
                     console.log("item", category)
                 })
             })
+    })()
+</script>
+<script>
+    (() => {
+        const modal = document.getElementById("deleteCategoryConfirmModal")
+        modal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget
+            
+            const id = button.getAttribute('data-bs-whatever-id')
+            const name = button.getAttribute('data-bs-whatever-name')
+                
+            const modalP = modal.querySelector('#p-sure')
+            const modalB = modal.querySelector('#yes-button')
+            const server = "https://npr211.novakv.com"
+            
+            modalP.textContent = `Ви впевнені, що хочете видалити категорію ${name}?`
+            modalB.textContent = `Так, видалити категорію ${name}`
+            modalB.addEventListener('click', async () => {
+                await axios.delete(`${server}/api/category/${id}`)
+                location.reload()
+            })
+            
+        })
     })()
 </script>
 </body>
